@@ -1,0 +1,44 @@
+html {
+    margin: 0em;
+    background-color: black;
+}
+
+body {
+    margin: 0em;
+}
+
+#gameDisplay {
+    background-color: black;
+    overflow: hidden;
+}
+
+#error {
+    text-align: center;
+    font-size: 500%;
+    color:red;
+}
+
+#gameOver {
+    text-align: center;
+    font-size: 500%;
+    color:red;
+    display:block;
+}
+
+#score {
+    color: red;
+    font-size: 200%;
+    text-align: center;
+}
+
+#highscoreForm {
+    text-align: center;
+}
+
+img {
+    position: absolute;
+}
+
+p {
+    color:red;
+}
