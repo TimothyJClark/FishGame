@@ -80,16 +80,13 @@ class Game {
         this.level.paddingTop = scorePara.offsetTop + scorePara.clientHeight + 20;
         this.level.paddingLeft = (gameInstance.display.clientWidth / 2) - (this.level.width / 2);
 
-        var background = document.createElement("img");
+        var background = document.getElementById("background");
 
         background.src = "./images/background.png";
         background.style.left = this.level.paddingLeft + "px";
         background.style.top = this.level.paddingTop + "px";
         background.style.width = this.level.width + "px";
         background.style.height = this.level.height + "px";
-        this.display.appendChild(background);
-
-
 
         for (var i = 0; i < 10; i++) {
             this.level.addFish();

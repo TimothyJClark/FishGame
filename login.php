@@ -27,11 +27,8 @@
 
     <body>
         <form action="./login.php" method="post">
-            <p>Username:</p><input type="text" name="username">
-            <br/>
-            <p>Password:</p><input type="password" name="password">
-            <br/>
-            <br/>
+            <p>Username: <input type="text" name="username"></p>
+            <p>Password: <input type="password" name="password"></p>
             <input type="submit" value="Login"> 
         </form>
     </body>

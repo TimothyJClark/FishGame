@@ -21,4 +21,12 @@
             <p class="navButton" onclick="window.location.assign('./play.php')">Play</p>
         </nav>
     </header>
+
+    <body>
+        <p class="aboutText">This website was created by Timothy Clark.</p> 
+        <br />
+        <p class="aboutText">The game hosted on the site was created using Javascript and DOM manipulation.</p>
+        <br />
+        <p class="aboutText">The backend is written in PHP, and the database used is a SQLite3 database.</p>
+    </body>
 </html>

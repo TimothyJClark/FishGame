@@ -17,6 +17,7 @@ p.navButton {
     display: inline;
     color: darkgray;
     cursor: pointer;
+    border-radius: 50%;
 }
 
 body {

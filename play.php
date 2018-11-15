@@ -25,5 +25,6 @@
 
     <body id="gameDisplay">
         <p id="score">Score: 0</p>
+        <img id="background" src="./images/background.png">
     </body>
 </html>
