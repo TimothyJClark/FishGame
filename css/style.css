@@ -20,6 +20,15 @@ p.navButton {
     border-radius: 50%;
 }
 
+p.navText {
+    float: right;
+    padding: 0px;
+    margin: 0px;
+    padding-top: 2px;
+    padding-right: 2px;
+    color: darkgray;
+}
+
 body {
     margin: 0px;
     background-color: black;

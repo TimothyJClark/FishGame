@@ -9,21 +9,16 @@
         <link rel="stylesheet" href="./css/login_style.css">
     </head>
 
-    <header>
-        <nav class="navBar">
-            <p class="navButton" onclick="window.location.assign('./index.php')">Home</p>
+    <?php
+        $masterFile = fopen("navbar.master", "r");
+        
+        while (!feof($masterFile))
+        {
+            echo(fgets($masterFile));
+        }
 
-            <p class="navButton" onclick="window.location.assign('./about.php')">About</p>
-
-            <p class="navButton" onclick="window.location.assign('./register.php')">Register</p>
-
-            <p class="navButton" onclick="window.location.assign('./login.php')">Login</p>
-
-            <p class="navButton" onclick="window.location.assign('./highscores.php')">Highscores</p>
-
-            <p class="navButton" onclick="window.location.assign('./play.php')">Play</p>
-        </nav>
-    </header>
+        fclose($masterFile);
+    ?>
 
     <body>
         <form action="./login.php" method="post">

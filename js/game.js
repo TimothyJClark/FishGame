@@ -172,7 +172,7 @@ class Level {
         
         if (isPlayer == true)
         {
-            var sprite = new Sprite("player", "fishman.png", this, gameInstance.display);
+            var sprite = new Sprite("player", "player.png", this, gameInstance.display);
             sprite.setHeight(12);
             sprite.setWidth(24);
             sprite.setX(startX);
@@ -184,7 +184,7 @@ class Level {
             let startWidth = parseInt(Math.random() * 64) + 5;
             let startHeight = parseInt(Math.random() * 32) + 5;
     
-            let spr = new Sprite("fish" + Math.ceil(Math.random() * 1000000), "fishman.png", this, gameInstance.display);
+            let spr = new Sprite("fish" + Math.ceil(Math.random() * 1000000), "enemy.png", this, gameInstance.display);
     
             spr.setX(startX);
             spr.setY(startY);
