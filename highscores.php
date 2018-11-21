@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $db = new SQLite3("./info.db");
 
     $result = $db->query("SELECT * FROM Scores ORDER BY ScoreValue DESC;");
@@ -20,6 +21,13 @@
         }
 
         fclose($masterFile);
+
+        $username = $_SESSION["username"];
+
+        if ($username !== null)
+        {
+            echo("<p class='navText'>Logged In As: ". $username . "</p>");
+        }
     ?>
 
     <body>

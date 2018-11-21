@@ -12,5 +12,6 @@
 
         <p class="navButton" onclick="window.location.assign('./play.php')">Play</p>
 
+
     </nav>
 </header>

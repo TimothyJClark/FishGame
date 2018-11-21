@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,6 +20,13 @@
         }
 
         fclose($masterFile);
+
+        $username = $_SESSION["username"];
+
+        if ($username !== null)
+        {
+            echo("<p class='navText'>Logged In As: ". $username . "</p>");
+        }
     ?>
 
     <body id="gameDisplay">

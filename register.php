@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <html>
     <head>
         <title>Register</title>
@@ -14,7 +18,15 @@
         }
 
         fclose($masterFile);
+        
+        $username = $_SESSION["username"];
+
+        if ($username !== null)
+        {
+            echo("<p class='navText'>Logged In As: ". $username . "</p>");
+        }
     ?>
+
 
     <body>
         <form action="./register.php" method="post">
@@ -75,6 +87,8 @@
             if ($result == true)
             {
                 echo("<p class='success'>Success: Account has been registered!</p>");
+                $_SESSION["username"] = $username;
+                $_SESSION["password"] = $password;
             }
         } else 
         {
