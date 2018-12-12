@@ -31,9 +31,11 @@ session_start();
     <body>
         <div id="welcome">
             <h1>Welcome to my website!</h1>
-            <p>Below are some gifs of the game hosted on this site:</p>
+            <p>Below are some screenshots of the game hosted on this site:</p>
         </div>
 
-        <img src="./images/elon.gif">
+        <img src="./images/screenshot1.png">
+
+        <img src="./images/screenshot2.png">
     </body>
 </html>

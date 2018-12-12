@@ -8,10 +8,10 @@
 
         <p class="navButton" onclick="window.location.assign('./login.php')">Login</p>
 
+        <p class="navButton" onclick="window.location.assign('./logout.php')">Logout</p>
+
         <p class="navButton" onclick="window.location.assign('./highscores.php')">Highscores</p>
 
         <p class="navButton" onclick="window.location.assign('./play.php')">Play</p>
-
-
     </nav>
 </header>

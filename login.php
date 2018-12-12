@@ -82,8 +82,10 @@
             $passwordHash = $arr["PasswordHash"];
 
             $inputPassHash = hash("sha256", $password . $passwordSalt);
+            $inputFinalHash = hash("sha256", "537ca51a-19bf-4ff6-be54-d01150220856" . $inputPassHash);
 
-            if (strcmp($inputPassHash, $passwordHash) === 0)
+
+            if (strcmp($inputFinalHash, $passwordHash) === 0)
             {
                 echo("<p class='success'>Successful login!</p>");
 
@@ -93,6 +95,12 @@
             {
                 echo("<p class='error'>Error: Invalid username or password!</p>");
             }
+        } else 
+        {
+            echo("<p class='error'>Error: Invalid username or password!</p>");
         }
+    } else 
+    {
+        echo("<p class='error'>Error: Invalid username or password!</p>");
     }
 ?>
