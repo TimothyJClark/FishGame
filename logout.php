@@ -33,7 +33,6 @@
 
 <?php
      $username = $_SESSION["username"];
-     $password = $_SESSION["password"];
     
      $wasLoggedIn = false;
 
@@ -42,12 +41,7 @@
          $wasLoggedIn = true;
          $_SESSION["username"] = null;
      }
-
-     if ($password !== null)
-     {
-         $_SESSION["password"] = null;
-     }
-
+     
      if ($wasLoggedIn)
      {
          echo("<p class='success'>You've been successfully logged out!</p>");

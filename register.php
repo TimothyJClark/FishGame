@@ -73,23 +73,24 @@ session_start();
     if ($unsafe === false)
     {
         $db = new SQLite3("./info.db");
+
+        $usernameHash = hash("sha256", $username);
         
         $passwordSalt = substr(hash("md5", random_int(PHP_INT_MIN, PHP_INT_MAX)), 0, 12);
         
         $passwordInitialHash = hash("sha256", $password . $passwordSalt);
         $passwordFinalHash = hash("sha256", "537ca51a-19bf-4ff6-be54-d01150220856" . $passwordInitialHash);
 
-        $result = $db->query("SELECT Username FROM Users WHERE UPPER(Username) IS UPPER('{$username}');");
+        $result = $db->query("SELECT UsernameHash FROM Users WHERE UPPER(UsernameHash) IS UPPER('{$usernameHash}');");
 
         if ($result == false || $result->fetchArray() == false)
         {
-            $result = $db->exec("INSERT INTO Users (Username, UserSalt, PasswordHash) VALUES ('{$username}', '{$passwordSalt}', '{$passwordFinalHash}');");
+            $result = $db->exec("INSERT INTO Users (UsernameHash, UserSalt, PasswordHash) VALUES ('{$usernameHash}', '{$passwordSalt}', '{$passwordFinalHash}');");
             
             if ($result == true)
             {
                 echo("<p class='success'>Success: Account has been registered!</p>");
                 $_SESSION["username"] = $username;
-                $_SESSION["password"] = $password;
             }
         } else 
         {

@@ -71,13 +71,14 @@
     {
         $db = new SQLite3("./info.db");
         
-        $result = $db->query("SELECT * FROM Users WHERE UPPER(Username) IS UPPER('{$username}');");
+        $usernameHash = hash("sha256", $username);
+
+        $result = $db->query("SELECT * FROM Users WHERE UPPER(UsernameHash) IS UPPER('{$usernameHash}');");
 
         if ($result != false)
         {
             $arr = $result->fetchArray();
 
-            $username = $arr["Username"];
             $passwordSalt = $arr["UserSalt"];
             $passwordHash = $arr["PasswordHash"];
 
@@ -90,7 +91,6 @@
                 echo("<p class='success'>Successful login!</p>");
 
                 $_SESSION["username"] = $username;
-                $_SESSION["password"] = $password;
             } else 
             {
                 echo("<p class='error'>Error: Invalid username or password!</p>");
@@ -101,6 +101,9 @@
         }
     } else 
     {
-        echo("<p class='error'>Error: Invalid username or password!</p>");
+        if (strlen($username) !== 0 || strlen($password) !== 0)
+        {
+            echo("<p class='error'>Error: Invalid username or password!</p>");
+        }
     }
 ?>
